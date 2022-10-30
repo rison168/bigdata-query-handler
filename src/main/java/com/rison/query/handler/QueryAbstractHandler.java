@@ -13,6 +13,7 @@ import com.rison.query.pojo.QueryExecutionDetail;
 import com.rison.query.pojo.QueryExecutionRecord;
 import com.rison.query.pojo.ResultType;
 import com.rison.query.storage.ResultStorageType;
+import com.tencent.tbds.datastudio.common.TempQueryProperties;
 import com.tencent.tbds.datastudio.service.UtherRpcService;
 import com.tencent.tbds.datastudio.service.tempquery.output.CsvFileOutput;
 import com.tencent.tbds.metadata.api.vo.ServerInfoVO;
@@ -44,13 +45,15 @@ public abstract class QueryAbstractHandler {
     private final Logger LOGGER = LoggerFactory.getLogger(QueryAbstractHandler.class);
     protected CsvFileOutput csvFileOutput;
 
+    protected TempQueryProperties queryProperties;
+
     protected UtherRpcService utherRpcService;
 
-    public abstract Connection getConnection(QueryExecutionRecord queryExecutionRecord, Properties properties);
+    public abstract Connection getConnection(QueryExecutionRecord queryExecutionRecord, Properties properties) throws SQLException;
 
-    public abstract HandlerResult doHandle(QueryExecutionRecord record, QueryExecutionDetail detail, Properties properties, Connection connection);
+    public abstract HandlerResult doHandle(QueryExecutionRecord record, QueryExecutionDetail detail, Properties properties, Connection connection) throws Exception;
 
-    public HandlerResult handle(QueryExecutionRecord record, QueryExecutionDetail detail, Properties properties, Connection connection) {
+    public HandlerResult handle(QueryExecutionRecord record, QueryExecutionDetail detail, Properties properties, Connection connection) throws Exception {
         if (detail.getScriptContent() != null) {
             SQLStatement sqlStatement = null;
             try {

@@ -87,6 +87,21 @@
            <version>3.6.4</version>
        </dependency>
        <dependency>
+           <groupId>org.apache.spark</groupId>
+           <artifactId>spark-sql_2.12</artifactId>
+           <version>3.1.2</version>
+       </dependency>
+       <dependency>
+           <groupId>org.apache.spark</groupId>
+           <artifactId>spark-core_2.12</artifactId>
+           <version>3.1.2</version>
+       </dependency>
+       <dependency>
+           <groupId>org.apache.spark</groupId>
+           <artifactId>spark-launcher_2.12</artifactId>
+           <version>3.1.2</version>
+       </dependency>
+       <dependency>
            <groupId>com.tencent.tbds</groupId>
            <artifactId>datastudio-common</artifactId>
            <version>5.2.0.1</version>
@@ -142,6 +157,13 @@
            <scope>system</scope>
            <systemPath>C:/home/rison/data/TBDS5300/TBDS5300/TBDS-5.3.0.0.T25/datastudio/tbds-datastudio-server/usr/hdp/2.2.0.0-2041/tbds-datastudio/lib/tbds-uther-api-5.2.0.1-SNAPSHOT.jar</systemPath>
        </dependency>
+       <dependency>
+           <groupId>com.tencent.tbds</groupId>
+           <artifactId>kdc-proxy-api</artifactId>
+           <version>5.2.0.1-SNAPSHOT</version>
+           <scope>system</scope>
+           <systemPath>C:/home/rison/data/TBDS5300/TBDS5300/TBDS-5.3.0.0.T25/datastudio/tbds-datastudio-server/usr/hdp/2.2.0.0-2041/tbds-datastudio/lib/kdc-proxy-api-5.2.0.1-SNAPSHOT.jar</systemPath>
+       </dependency>
    </dependencies>
     <build>
         <plugins>
@@ -149,8 +171,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
