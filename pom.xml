@@ -113,6 +113,11 @@
            </exclusions>
        </dependency>
        <dependency>
+           <groupId>io.trino</groupId>
+           <artifactId>trino-jdbc</artifactId>
+           <version>360</version>
+       </dependency>
+       <dependency>
            <groupId>com.tencent.tbds</groupId>
            <artifactId>datastudio-common</artifactId>
            <version>5.2.0.1</version>
