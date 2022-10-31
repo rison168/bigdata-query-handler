@@ -96,7 +96,7 @@ public class QueryPerstoHandler extends QueryAbstractHandler {
         } else {
             handlerResult.setType(ResultType.NONE);
         }
-        this.LOGGER.info("*****" + isResultSet + "-" + statement.getResultSet() + "-" + statement.getUpdateCount() + "-" + result);
+        this.LOGGER.info("*****" + isResultSet + "-" + statement.getResultSet() + "-" + statement.getUpdateCount() + "-" + handlerResult);
         return handlerResult;
     }
 
