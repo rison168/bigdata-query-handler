@@ -208,7 +208,7 @@ public class QuerySparkHandler extends QueryAbstractHandler {
         hashMap.put("HADOOP_CONF_DIR", clusterShimInfo.getConfDir() + "/hdfs");
         hashMap.put("SPARK_CONF_DIR", clusterShimInfo.getConfDir() + "/spark");
         String detailId = detail.getId().toString();
-        String mainClass = "com.tencent.tbds.SparkSQLJob";
+        String mainClass = "com.rison.query.job.SparkSQLJob";
         final SparkLauncher spark = new SparkLauncher(hashMap);
         final SparkLauncher sparkLauncher = spark.setAppName("app")
                 .setAppResource(this.filePath)
