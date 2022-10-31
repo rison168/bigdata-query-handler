@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.tencent.tbds.datastudio.entity.TemporaryQueryExecutionRecord;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
@@ -22,7 +24,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "query_execution_record")
-public class QueryExecutionRecord implements Serializable {
+public class QueryExecutionRecord extends TemporaryQueryExecutionRecord implements Serializable {
     private Long id;
 
     private Long scriptId;

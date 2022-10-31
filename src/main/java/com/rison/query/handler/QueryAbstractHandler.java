@@ -49,7 +49,7 @@ public abstract class QueryAbstractHandler {
 
     protected UtherRpcService utherRpcService;
 
-    public abstract Connection getConnection(QueryExecutionRecord queryExecutionRecord, Properties properties) throws SQLException;
+    public abstract Connection getConnection(QueryExecutionRecord queryExecutionRecord, Properties properties) throws Exception;
 
     public abstract HandlerResult doHandle(QueryExecutionRecord record, QueryExecutionDetail detail, Properties properties, Connection connection) throws Exception;
 
